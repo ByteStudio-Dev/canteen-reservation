@@ -44,6 +44,12 @@
       color: #333;
     }
 
+    /* Highlight current page link */
+    nav a.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+
     .menu-section {
       padding: 50px 20px;
       text-align: center;
@@ -126,11 +132,12 @@
     <p>Browse our delicious menu and choose your favorites!</p>
   </header>
 
+  <!-- Updated Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="#">Reserve</a>
-    <a href="#">Contact</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="reserve.html" class="nav-link">Reserve</a>
+    <a href="contact.html" class="nav-link">Contact</a>
   </nav>
 
   <section class="menu-section">
@@ -193,6 +200,15 @@
       item.addEventListener('click', () => {
         alert(`You selected: ${item.querySelector('h3').textContent}`);
       });
+    });
+
+    // Highlight current page link
+    const links = document.querySelectorAll('nav a');
+    const currentPage = location.pathname.split("/").pop();
+    links.forEach(link => {
+      if(link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
     });
   </script>
 
