@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Canteen Food Reservation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fffdf8;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff9800;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav {
+      background-color: #ffa726;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #ff9800;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ff9800;
+      box-shadow: 0 0 4px rgba(255,152,0,0.5);
+    }
+
+    button {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #e68900;
+    }
+
+    .success-message {
+      display: none;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 20px;
+      border: 1px solid #81c784;
+    }
+
+    footer {
+      background-color: #ff9800;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .contact-section {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .contact-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Canteen Food Reservation</h1>
+    <p>We value your feedback — get in touch with us!</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reserve.html">Reserve</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <p>📍 Address: University Canteen, 2nd Floor, Main Building</p>
+      <p>📞 Phone: 0912-345-6789</p>
+      <p>✉️ Email: canteen.reservation@gmail.com</p>
+    </div>
+
+    <form id="contactForm">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      </div>
+
+      <div>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      ✅ Your message has been sent successfully! We’ll get back to you soon.
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Canteen Food Reservation | Designed by ByteStudio-Dev</p>
+  </footer>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMessage');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      successMsg.style.display = 'block';
+      contactForm.reset();
+
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
