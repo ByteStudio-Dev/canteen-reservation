@@ -44,6 +44,12 @@
       color: #333;
     }
 
+    /* Highlight current page link */
+    nav a.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+    }
+
     .contact-section {
       max-width: 800px;
       margin: 40px auto;
@@ -149,11 +155,12 @@
     <p>We value your feedback — get in touch with us!</p>
   </header>
 
+  <!-- Updated Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="reserve.html">Reserve</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="reserve.html" class="nav-link">Reserve</a>
+    <a href="contact.html" class="nav-link">Contact</a>
   </nav>
 
   <section class="contact-section">
@@ -215,6 +222,15 @@
       setTimeout(() => {
         successMsg.style.display = 'none';
       }, 5000);
+    });
+
+    // Highlight current page link
+    const links = document.querySelectorAll('nav a');
+    const currentPage = location.pathname.split("/").pop();
+    links.forEach(link => {
+      if(link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
     });
   </script>
 
