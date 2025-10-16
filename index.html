@@ -132,36 +132,21 @@
 
     .food-list {
       background-color: #fff3e0;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     .food-list h2 {
       font-size: 2rem;
       color: #ff9800;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .food-list ul {
-      list-style: none;
-      padding: 0;
-      display: inline-block;
-      text-align: left;
-    }
-
-    .food-list li {
-      margin: 10px 0;
-    }
-
-    .food-list a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .food-list a:hover {
-      color: #ff9800;
+    .food-list-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-items: center;
     }
 
     footer {
@@ -172,7 +157,6 @@
       margin-top: 40px;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 2rem;
@@ -235,14 +219,34 @@
     </div>
   </section>
 
+  <!-- NEW Added Section -->
   <section class="food-list">
     <h2>Available Foods in the Canteen</h2>
-    <ul>
-      <li><a href="#chicken-adobo">Chicken Adobo</a></li>
-      <li><a href="#pancit-canton">Pancit Canton</a></li>
-      <li><a href="#tuna-pastil">Tuna Pastil</a></li>
-      <li><a href="#chicken-pastil">Chicken Pastil</a></li>
-    </ul>
+    <div class="food-list-container">
+      <div class="menu-item" id="chicken-adobo">
+        <img src="images/chicken-adobo.jpg" alt="Chicken Adobo">
+        <h3>Chicken Adobo</h3>
+        <p>₱75 — Classic Filipino dish simmered in soy sauce and vinegar.</p>
+      </div>
+
+      <div class="menu-item" id="pancit-canton">
+        <img src="images/pancit-canton.jpg" alt="Pancit Canton">
+        <h3>Pancit Canton</h3>
+        <p>₱60 — Stir-fried noodles with vegetables, meat, and savory sauce.</p>
+      </div>
+
+      <div class="menu-item" id="tuna-pastil">
+        <img src="images/tuna-pastil.jpg" alt="Tuna Pastil">
+        <h3>Tuna Pastil</h3>
+        <p>₱65 — Spiced tuna flakes served on warm rice wrapped in banana leaf.</p>
+      </div>
+
+      <div class="menu-item" id="chicken-pastil">
+        <img src="images/chicken-pastil.jpg" alt="Chicken Pastil">
+        <h3>Chicken Pastil</h3>
+        <p>₱65 — Marinated shredded chicken over steamed rice with rich flavor.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
