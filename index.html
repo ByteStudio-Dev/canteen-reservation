@@ -45,7 +45,7 @@
     }
 
     .hero {
-      background: url('images/background.jpg') center/cover no-repeat;
+      background: url('images/home-bg.jpg') center/cover no-repeat;
       height: 60vh;
       display: flex;
       justify-content: center;
@@ -53,17 +53,15 @@
       flex-direction: column;
       color: white;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-      text-align: center;
-      padding: 0 10px;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 25px;
     }
 
@@ -106,8 +104,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
       transition: transform 0.3s;
-      width: 100%;
-      max-width: 300px;
     }
 
     .menu-item:hover {
@@ -130,25 +126,6 @@
       color: #555;
     }
 
-    .food-list {
-      background-color: #fff3e0;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .food-list h2 {
-      font-size: 2rem;
-      color: #ff9800;
-      margin-bottom: 30px;
-    }
-
-    .food-list-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      justify-items: center;
-    }
-
     footer {
       background-color: #ff9800;
       color: white;
@@ -157,17 +134,59 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .menu h2, .food-list h2 {
-        font-size: 1.5rem;
-      }
+    /* Additional Section for Available Foods */
+    .available {
+      padding: 50px 20px;
+      text-align: center;
     }
+
+    .available h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ff9800;
+    }
+
+    .available-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .available-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .available-item:hover {
+      transform: scale(1.03);
+    }
+
+    .available-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .available-item h3 {
+      margin: 15px 0 5px 0;
+      color: #333;
+    }
+
+    .available-item p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -178,21 +197,22 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Menu</a>
-    <a href="#">Reserve</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="reserve.html">Reserve</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section class="hero">
     <h1>Fresh, Hot, and Ready When You Are</h1>
     <p>Reserve your meals online — quick and easy!</p>
-    <button onclick="alert('Reservation page coming soon!')">Reserve Now</button>
+    <button onclick="window.location.href='reserve.html'">Reserve Now</button>
   </section>
 
   <section class="menu">
     <h2>Our Best Sellers</h2>
     <div class="menu-container">
+      
       <div class="menu-item">
         <img src="images/chicken-adobo.jpg" alt="Chicken Adobo">
         <h3>Chicken Adobo</h3>
@@ -216,36 +236,39 @@
         <h3>Chicken Pastil</h3>
         <p>₱65 — Marinated shredded chicken over steamed rice with rich flavor.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- NEW Added Section -->
-  <section class="food-list">
+  <!-- 🆕 Added Available Foods Section -->
+  <section class="available">
     <h2>Available Foods in the Canteen</h2>
-    <div class="food-list-container">
-      <div class="menu-item" id="chicken-adobo">
+    <div class="available-container">
+
+      <div class="available-item" onclick="window.location.href='menu.html'">
         <img src="images/chicken-adobo.jpg" alt="Chicken Adobo">
         <h3>Chicken Adobo</h3>
         <p>₱75 — Classic Filipino dish simmered in soy sauce and vinegar.</p>
       </div>
 
-      <div class="menu-item" id="pancit-canton">
+      <div class="available-item" onclick="window.location.href='menu.html'">
         <img src="images/pancit-canton.jpg" alt="Pancit Canton">
         <h3>Pancit Canton</h3>
         <p>₱60 — Stir-fried noodles with vegetables, meat, and savory sauce.</p>
       </div>
 
-      <div class="menu-item" id="tuna-pastil">
+      <div class="available-item" onclick="window.location.href='menu.html'">
         <img src="images/tuna-pastil.jpg" alt="Tuna Pastil">
         <h3>Tuna Pastil</h3>
         <p>₱65 — Spiced tuna flakes served on warm rice wrapped in banana leaf.</p>
       </div>
 
-      <div class="menu-item" id="chicken-pastil">
+      <div class="available-item" onclick="window.location.href='menu.html'">
         <img src="images/chicken-pastil.jpg" alt="Chicken Pastil">
         <h3>Chicken Pastil</h3>
         <p>₱65 — Marinated shredded chicken over steamed rice with rich flavor.</p>
       </div>
+
     </div>
   </section>
 
